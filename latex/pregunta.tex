@@ -1,0 +1,150 @@
+\documentclass[10pt, oneside]{article}
+
+% Packages
+\usepackage{amsmath, amsthm, amssymb, calrsfs, wasysym, verbatim, bbm, color, graphics, geometry}
+\usepackage[utf8]{inputenc}
+
+% Geometry
+\geometry{
+	tmargin=.75in,
+	bmargin=.75in,
+	lmargin=.75in,
+	rmargin=.75in
+}
+
+% Commands
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+
+% Theorems
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}{Definition}
+\newtheorem{conv}{Convention}
+\newtheorem{rem}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem{cor}{Corollary}
+
+% Metadata
+\title{Pregunta acerca de una posible relación entre Planitud Diferencial y formulaciones Hamiltonianas}
+\author{Andres Mauricio Morales Martinez}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+Hola profe :D
+
+Me surgió una duda conceptual intentando conectar varias ideas del curso con cosas de mecánica analítica, así que quería preguntarle si esto tiene sentido o si estoy mezclando conceptos que no deberían mezclarse.
+
+Entiendo que los corchetes de Lie me dan una idea geométrica de la diferencia al conmutar direcciones inducidas por campos vectoriales. Sean $\mathbf{f}$ y $\mathbf{g}$ campos vectoriales en $\mathbf{R}^n$,
+
+\begin{equation}
+	[\mathbf{f},\mathbf{g}]
+	=
+	\nabla \mathbf{g}\,\mathbf{f}
+	-
+	\nabla \mathbf{f}\,\mathbf{g}.
+\end{equation}
+
+Por otro lado, si tengo un sistema autónomo
+
+\begin{equation}
+	\dot{\mathbf{x}}(t)
+	=
+	\mathbf{f}(\mathbf{x}(t)),
+	\label{eq:dynamic}
+\end{equation}
+
+donde $\mathbf{x}(t)$ es la curva integral del campo $\mathbf{f}$, y considero una salida escalar
+
+\begin{equation}
+	y(t)
+	=
+	h(\mathbf{x}(t)),
+	\qquad
+	h:\R^n \to \R,
+\end{equation}
+
+entonces su evolución temporal puede escribirse como
+
+\begin{equation}
+	\dot{y}(t)
+	=
+	\nabla h~
+	\dot{\mathbf{x}}(t)
+	=
+	\nabla h~
+	\mathbf{f}(\mathbf{x}(t))
+	=
+	L_f h.
+\end{equation}
+
+Hasta ahí entiendo que la derivada de Lie representa cómo evoluciona una observable cuando se sigue el flujo inducido por el campo vectorial del sistema.
+
+Ahora, pasando al formalismo Hamiltoniano, si el sistema admite una representación Hamiltoniana con coordenadas canónicas $(q,p)$ y Hamiltoniano $H(q,p)$, la evolución temporal de una observable escalar
+
+\begin{equation}
+	\Gamma(q,p;t)
+	\in
+	\R
+\end{equation}
+
+está dada por
+
+\begin{equation}
+	\frac{d}{dt}
+	\Gamma(q,p;t)
+	=
+	\{\Gamma,H\}
+	+
+	\frac{\partial \Gamma}{\partial t}.
+\end{equation}
+
+Si la observable no depende explícitamente del tiempo, entonces
+
+\begin{equation}
+	\dot{\Gamma}
+	=
+	\{\Gamma,H\}.
+\end{equation}
+
+Por lo tanto, si mi salida puede escribirse como una observable del sistema,
+
+\begin{equation}
+	y(t)
+	=
+	h(q(t),p(t)),
+\end{equation}
+
+parece que podría escribir
+
+\begin{equation}
+	\dot y
+	=
+	\{h,H\}
+	=
+	L_{X_H}h,
+\end{equation}
+
+donde $X_H$ sería el campo Hamiltoniano inducido por $H$. \\ 
+
+Ahora lo interesante, es que si elijo mis estados adecuadamente de una forma que sea admitida por la formulación Hami
+
+La intuición que me quedó es que parece existir una relación bastante íntima entre la evolución temporal escrita mediante derivadas de Lie y aquella escrita mediante corchetes de Poisson, al menos cuando la dinámica admite una representación Hamiltoniana.\\
+
+
+Me surge entonces una pregunta profe, : \\
+
+
+
+¿Tiene sentido preguntarse si existe una parametrización diferencialmente plana que además sea compatible con coordenadas canónicas? Creería inicialmente que sí y en ese caso, quizá, uno podría intentar formular el problema de encontrar una salida plana a partir de un Hamiltoniano del sistema, aprovechando la estructura geométrica asociada.
+
+No sé si esta idea ya existe en alguna forma, si estoy mezclando conceptos incompatibles, o si realmente podría haber algo útil ahí para el método del curso, pero me dio curiosidad porque siento que la conexión entre corchetes de Lie y corchetes de Poisson podría ser más profunda de lo que estoy entendiendo ahorita.\\
+
+Me fascinaría profundizar y explorar más en esto! No sé si me puedas ayudar. 
+
+\end{document}
